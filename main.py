@@ -38,6 +38,12 @@ else :
    print("INFO : KHONG DANG NHAP DUOC TK {username}")
 
 
+gr_button = driver.find_element(By.XPATH, "/html/body/div[1]/div/div[1]/div/div[2]/div[4]/div/div[1]/div[1]/ul/li[4]/span/div/a/span/svg/path[2]")
+gr_button.click()
+
+
+
+
 
 driver.quit()
 
