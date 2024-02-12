@@ -1,6 +1,8 @@
 from selenium import webdriver
 import subporcess
 from config import username, password
+from selenium.webdriver.common.by import By
+
 
 banner = ("""
 ┃┏━━━┓┃┃┃┃┃┃┃┃┃┃┃┃┃┃┃┓┃┃┏┓┏┓┃
@@ -28,12 +30,16 @@ pwd.send_keys(f'{password})
 
 login = driver.find_element(By.NAME, "login")
 login.click()
+driver.wait(5)
 
-if login.response_statuscode == 200 :
-   print("DANG NHAP THANH CONG VAO FACEBOOK")
+if driver.title == "Facebook" :
+   print("INFO : DANG NHAP THANH CONG VOI TK  {username}")
 else :
-   print("KHONG DANG NHAO DUOC VAO FACEBOOK, CHECK TKMK")
+   print("INFO : KHONG DANG NHAP DUOC TK {username}")
 
+
+
+driver.quit()
 
 
 
